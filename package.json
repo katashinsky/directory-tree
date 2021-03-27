@@ -9,6 +9,12 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint-fix": "tslint -c tslint.json -p tsconfig.json --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
   "author": "Dmitryi",
   "license": "ISC",
   "devDependencies": {
@@ -22,11 +28,5 @@
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^4.2.3"
   },
-  "dependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm lint",
-      "pre-push": "npm run test"
-    }
-  }
+  "dependencies": {}
 }
