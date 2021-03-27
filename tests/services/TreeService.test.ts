@@ -10,8 +10,10 @@ describe('The Service Tree instance', () => {
   let spyMoveTree;
   let spyDeleteTree;
   let spyCreateTree;
+  let spyLogger;
 
   beforeEach(() => {
+    spyLogger = jest.spyOn(logger,  'showTree').mockImplementation(() => {});
     const rootDir = new TreeNode('', [], null);
     const tree = new Tree(rootDir, logger);
     spyListTree = jest.spyOn(tree, 'list');

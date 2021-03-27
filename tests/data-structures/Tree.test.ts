@@ -8,7 +8,7 @@ describe('The Tree instance', () => {
 
   beforeEach(() => {
     const rootDir = new TreeNode('root', [], null);
-    spyLogger = jest.spyOn(logger,  'showTree');
+    spyLogger = jest.spyOn(logger,  'showTree').mockImplementation(() => {});
     tree = new Tree(rootDir, logger);
   });
 
