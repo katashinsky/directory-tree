@@ -1,9 +1,10 @@
-import { tree, Tree } from '../data-structures/Tree';
+import { tree } from '../data-structures/Tree';
 import { commands } from '../data/commands.json';
 import { CommandsEnum } from '../enums';
+import { ITree } from '../interfaces/ITree';
 
 export class TreeService {
-  constructor(private tree: Tree, private commands: string[]) {
+  constructor(private tree: ITree, private commands: string[]) {
   }
 
   public runCommandsList() {
@@ -18,7 +19,7 @@ export class TreeService {
           this.tree.create(dir, parentDir);
         } break;
         case CommandsEnum.DELETE: {
-          this.tree.delete(dirNames);
+          this.tree.delete(dirNames, false);
         } break;
         case CommandsEnum.MOVE: {
           const [fromChain, to] = dirNames;
