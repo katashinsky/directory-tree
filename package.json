@@ -25,8 +25,8 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run test"
+      "pre-commit": "npm lint",
+      "pre-push": "npm test"
     }
   }
 }
