@@ -8,7 +8,6 @@ export function ErrorHandler(value: string) {
         descriptor.value.call(this, ...arguments);
       }catch (error) {
         logger.log(value);
-        // tslint:disable-next-line:no-console
         console.error(error);
       }
     }
