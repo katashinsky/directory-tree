@@ -1,12 +1,14 @@
 import { tree } from '../data-structures/Tree';
 import { commands } from '../data/commands.json';
-import { CommandsEnum } from '../enums';
+import { CommandsEnum, ErrorsEnum } from '../enums';
 import { ITree } from '../interfaces/ITree';
+import { ErrorHandler } from '../decorators/error-handler';
 
 export class TreeService {
   constructor(private tree: ITree, private commands: string[]) {
   }
 
+  @ErrorHandler(ErrorsEnum.COMMANDS_RUN_ERROR)
   public runCommandsList() {
     this.commands.forEach((commandItem) =>  {
       const { command, dirNames } = this.parseCommand(commandItem);
