@@ -46,6 +46,6 @@ describe('The Tree instance', () => {
     expect(tree.getRoot().getChildren()[1].getChildren().length).toBe(2);
     tree.move(['dir2', 'dir4'], 'dir1');
     tree.move(['dir2', 'dir3'], 'dir1');
-    expect(tree.getRoot().getChildren()[0].getChildren().length).toBe(3);
+    expect(tree.getRoot().getChildren()[0].getChildren().length).toBe(4);
   });
 });
