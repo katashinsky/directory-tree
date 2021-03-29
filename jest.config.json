@@ -1,0 +1,10 @@
+{
+  "roots": [
+    "."
+  ],
+  "testMatch": [
+    "**/tests/**/*.test.+(ts)"
+  ],
+  "preset": "ts-jest",
+  "setupFiles": ["./src/extensions/Array.extension.ts"]
+}
